@@ -67,7 +67,7 @@ Test 3: (0,1) is between (1,1) and (-1,1)
 Test 10: (3,5) is between ...
 *)
 
-exception Fail
+exception Unreachable
 let segment x y =
   if abs x > abs y then 0
   else if x > 0 && y > 0 && abs x = abs y then 1
@@ -112,7 +112,7 @@ let boundingPair x y =
   else if isOnHorizontal x y then
     if y < 0 then Line (y,y)
       else Line (y,y)
-  else raise Fail
+  else raise Unreachable
 
 let turns x y =
   let i = max (abs x - 1) 0 in
