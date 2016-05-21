@@ -10,6 +10,7 @@ let packageBoxing package boxes =
         | None  ->
             if fits box
             then (i, i+1, Some box)
+
             else (r, i+1, ob)
         | Some oldbox ->
             if fits box && smaller box oldbox
