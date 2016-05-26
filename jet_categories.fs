@@ -8,7 +8,7 @@ let catalogUpdate catalog updates =
             | [], rest -> rest
             | things, [] -> things
             | (t::ts), (m::ms) -> if t > m then (m :: t :: go_insert ts ms)
-                                      else (t :: go_insert ts more)
+                else (t :: go_insert ts more)
     in
     let rec go catalog updates newcat =
         match catalog,updates with
