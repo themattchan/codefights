@@ -7,5 +7,5 @@ catalogUpdate catalog updates =
   where
     (a,r:b)  = break ((=="root") . fst) updated
     updated  = M.toList . M.map (sort . nub)
-             $ M.unionWith (++) (tomap updates) (tomap catalog)
+             $ M.unionWith (++) (tomap catalog) (tomap updates)
     tomap    = M.fromListWith (++) . map (head &&& tail)
